@@ -42,12 +42,15 @@ barra3 = driver.find_element_by_name("p_fecha_hasta")
 barra3.send_keys("01/03/2016")
 barra3.send_keys(Keys.RETURN)
 
-# tiempo para llenar el captcha
+# Tiempo para llenar el captcha
 time.sleep(20)
 
-# hacer click en consultar
+# Hacer click en consultar
 button = driver.find_element_by_name("consultar")
 button.click()
+
+# Extracción de Links
+
 data = {}
 df = pd.DataFrame(columns=['Links'])
 
