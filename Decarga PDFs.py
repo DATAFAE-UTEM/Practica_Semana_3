@@ -13,13 +13,16 @@ chrome_options.add_experimental_option('prefs', {
     "plugins.always_open_pdf_externally": True
  })
 
+# Navegacion
 driver = webdriver.Chrome(options=chrome_options,
                           executable_path="C:\\Program Files (x86)\\chromedriver.exe")
 
+# Documento de texto con todas las referencias de los archivos
 df = pd.read_csv('C:\\Users\\marti\\OneDrive\\Documentos\\GitHub\\Semana-2\\Semana 3\\Hechos 2012 - 2016_links')
 links = df.iloc[6715:, 1] # Cuando se detiene el modelo de descarga, buscar fila y generar filtro para correr el modelo nuevamente
 
 print(links)
 
+# Iteracion para descargar los archivos segun los links dentro del documento .txt
 for url in links:
     driver.get(url)
